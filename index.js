@@ -63,4 +63,13 @@ wss.on('connection', function connection(ws) {
     session.clients.forEach(w => w.send(data));
     console.log('sessions object', session);
     });
+
+    ws.on('close', () => {
+        const clientIndex = session.clients.findIndex(c => c.uuid === clientId);
+        session.clients.splice(clientIndex, 1);
+        console.log('Client disconnected:', clientId);
+        if (session.clients.length === 0) {
+          session.messages = [];
+        }
+    });
 });
