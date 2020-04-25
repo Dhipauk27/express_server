@@ -59,9 +59,12 @@ wss.on('connection', function connection(ws) {
     session.clients.push(ws);
 
     ws.on('message', function incoming(data) {
-    session.messages.push(data);
-    session.clients.forEach(w => w.send(data));
-    console.log('sessions object', session);
+        console.log('data sent from client', data)
+        if(data !== 'ping') {
+            session.messages.push(data);
+            session.clients.forEach(w => w.send(data));
+            console.log('sessions object', session)
+        }
     });
 
     ws.on('close', () => {
