@@ -61,6 +61,6 @@ wss.on('connection', function connection(ws) {
     ws.on('message', function incoming(data) {
     session.messages.push(data);
     session.clients.forEach(w => w.send(data));
-    console.log('sessions object', session)
+    console.log('sessions object', session);
     });
 });
