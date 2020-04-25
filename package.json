@@ -4,7 +4,7 @@
   "description": "Server for express and websocket",
   "main": "index.js",
   "scripts": {
-    "start": "npm install && node index.js"
+    "start": "node index.js"
   },
   "license": "MIT",
   "dependencies": {
