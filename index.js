@@ -7,7 +7,7 @@ var http = require('http');
 const login = require('./routes/login');
 var broadcast = require('./routes/broadcast');
 
-var dotenv = require('dotenv')
+var dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
