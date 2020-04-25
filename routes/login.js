@@ -17,7 +17,7 @@ router.post("/", async(req,res)=>{
       password: password
     })
     .catch(error => {
-      console.log(error)
+      console.log(error);
     });
 
     if(_.isEmpty(user)) {
